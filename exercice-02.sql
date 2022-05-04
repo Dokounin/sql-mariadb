@@ -26,7 +26,7 @@ WHERE id = 6
 -- - nom : SASS
 -- - description : aucune
 INSERT INTO 'tag'('name','description')
-VALUES ('SASS','NULL')
+VALUES ('SASS', NULL)
 -- Exo 2.2
 -- Insérez une school year :
 -- - nom: Promo 2023
@@ -34,7 +34,7 @@ VALUES ('SASS','NULL')
 -- - date de début : 15 mars 2023
 -- - date de fin : aucune
 INSERT INTO `school_year`(`name`, `description`, `start_date`, `end_date`)
-`VALUES ('PROMO 2023','La promo de l\'année 2023','2023-04-15',NULL);`
+VALUES ('PROMO 2023','La promo de l''année 2023','2023-04-15', NULL);
 
 -- Exo 2.3
 -- Créez une relation entre un student et un tag :
@@ -44,18 +44,21 @@ INSERT INTO `school_year`(`name`, `description`, `start_date`, `end_date`)
 SELECT * FROM `tag` WHERE name = 'SASS'
 
 INSERT INTO `student_tag`(`student_id`, `tag_id`)
-VALUES ('1','15'); 
+VALUES (1, 15); 
 -- Exo 2.4
 -- Mettez à jour le tag `HTML` :
 -- description : Le HTML est un language de structuration de données.
 UPDATE `tag`
-SET `description`='Le HTML est un language de structuration de données.' WHERE id = 1 ;
+SET `description`='Le HTML est un language de structuration de données.'
+WHERE id = 1 ;
 -- Exo 2.5
 -- Mettez à jour le tag `Bash` :
 -- nom : Terminal Bash
 -- description : Le terminal Bash est l'interface en ligne de commande par défaut sous Linux.
 UPDATE `tag` 
-`SET `name`='Terminal Bash',`description`='Le terminal Bash est l\'interface en ligne de commande par défaut sous Linux.' WHERE id = 10 `
+SET `name`='Terminal Bash',
+    `description` = 'Le terminal Bash est l''interface en ligne de commande par défaut sous Linux.'
+WHERE id = 10 
 -- Exo 2.6
 -- Supprimez la relation entre un student et un tag :
 -- - student : Zacharie Evrard
